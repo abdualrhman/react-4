@@ -24,7 +24,13 @@ export default class TaskId extends React.Component {
     return (
       <div>
         {!this.state.item && <p>no data</p>}
-        {this.state.item && <p>{this.state.item.description}</p>}
+        {this.state.item &&
+          <div>
+            <p>description : {this.state.item.description}</p>
+            <p>deadline : {this.state.item.deadline}</p>
+            <p>id : {this.state.item._id}</p>
+          </div>
+        }
       </div>
     );
   }

@@ -11,11 +11,16 @@ class App extends Component {
 
       <Route exact path='/tasks' component={TodoManeger}/>
       <Route exact path='/tasks/:id' component={TaskId}/>
+      <Route exact path='/home' component={()=>(
+        <div>
+          <h1>wellcome</h1>
+        </div>
+      )}/>
       <Route exact path='/' component={()=>(
         <div>
         <Link to='tasks'>tasks</Link>
         <br/>
-        <Link to='about'>about</Link>
+        <Link to='home'>Home</Link>
         </div>
       )}/>
       </div>
