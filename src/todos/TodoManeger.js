@@ -11,6 +11,7 @@ export default class TodoManeger extends React.Component {
   		deadlineValue : '2/2/2012',
   		todoValue : null,
   		todoList : [],
+      loading : true,
   	}
   	this.changeFunc=this.changeFunc.bind(this)
   	this.addingFunc=this.addingFunc.bind(this)
@@ -48,7 +49,8 @@ export default class TodoManeger extends React.Component {
   	.then((response) => response.json())
 	.then((data) => {
 	this.setState({
-		todoList: data
+		todoList: data,
+    loading : false
 		}, ()=>{console.log(this.state.todoList)})
 	})
   }
@@ -66,7 +68,7 @@ export default class TodoManeger extends React.Component {
   		body : JSON.stringify(item)
   	})
   	.then(this.setState({
-  		todoList : newList
+  		todoList : newList,
   	}))
   }
   checkFunc(index){
@@ -103,6 +105,7 @@ export default class TodoManeger extends React.Component {
       	todos={this.state.todoList}
       	removeHandler={this.removeFunc}
         checkHandler={this.checkFunc}
+        loading={this.state.loading}
       	/>
       </div>
     );

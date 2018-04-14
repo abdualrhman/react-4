@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 
 export default class TodoList extends React.Component {
   render() {
-    const {todos, removeHandler, checkHandler} = this.props;
+    const {todos, removeHandler, checkHandler, loading} = this.props;
     return (
       <div>
       	<ul>
@@ -30,13 +30,17 @@ export default class TodoList extends React.Component {
       					</li>)
       			})
       		}
+
           {
-            todos.length===0
-            &&
+             loading &&
             <div>
             <p>loading tasks ...</p>
             <div className="loader"></div>
-            </div>
+             </div>
+          }
+          {
+              !loading && todos.length ===0 &&
+              <p>you have no taskes</p>
           }
       	</ul>
       </div>
@@ -49,3 +53,8 @@ TodoList.propTypes={
   checkHandler : PropTypes.func.isRequired,
 
 }
+
+// <div>
+// <p>loading tasks ...</p>
+// <div className="loader"></div>
+// </div>
