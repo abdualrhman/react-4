@@ -1,8 +1,7 @@
 import React from 'react';
 import '../index.css';
 import PropTypes from 'prop-types'
-
-
+import { Link} from 'react-router-dom'
 
 export default class TodoList extends React.Component {
   render() {
@@ -20,7 +19,7 @@ export default class TodoList extends React.Component {
                 todo &&
       					<li key={index}
                 className={todo.done ? 'Checked' : 'btn'}>
-      						{todo.description}
+      						<Link to={`tasks/${todo._id}`}>{todo.description}</Link>
                   <input type='checkbox'
                   onChange={()=>checkHandler(index)}
                   checked={todo.done}/>
@@ -30,7 +29,6 @@ export default class TodoList extends React.Component {
       					</li>)
       			})
       		}
-
           {
              loading &&
             <div>

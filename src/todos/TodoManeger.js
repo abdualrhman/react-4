@@ -95,19 +95,21 @@ export default class TodoManeger extends React.Component {
 
   render() {
     return (
+
       <div>
       <TodoForm
       	changeHandler={this.changeFunc}
      	 addingHandler={this.addingFunc}
       />
-
       <TodoList
       	todos={this.state.todoList}
       	removeHandler={this.removeFunc}
         checkHandler={this.checkFunc}
         loading={this.state.loading}
       	/>
+
       </div>
+
     );
   }
 }
