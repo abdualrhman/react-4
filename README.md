@@ -1,5 +1,5 @@
-#todos-app
-here is a todos app, it's a react app that read, write, and delete data via an external REST-api
+# todos-app
+here is a todos app, it's a react-app that read, write, and delete data via an external REST-api
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
